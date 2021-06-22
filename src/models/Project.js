@@ -26,7 +26,22 @@ const Project = sequelize.define('projects', {
 
 module.exports = Project;
 
-Project.hasMany(Task, { foreinkey: 'projectid', sourceKey: 'id' });
-Task.belongsTo(Project, { foreinkey: 'projectid', targetId: 'id' });
+/*
+    hasMany=tiene muchas
+    belongsTo=pertenece a 
+*/
+
+/*
+    Product.belongsTo(User, {
+        as: 'User',
+        foreignKey: "userID"
+    });
+*/
+
+// Project.hasMany(Task, { foreinkey: 'projectid', sourceKey: 'id' });
+Project.hasMany(Task, { as: 'tasks',foreignkey: 'projectid', sourceKey: 'id' });
+// Task.belongsTo(Project, { foreinkey: 'projectId', targetId: 'id' });
+// Task.belongsTo(Project, { foreinkey: 'projectid', sourceKey: 'id' });
+Task.belongsTo(Project, {as:'project', foreingkey: 'projectid', targedId: 'id' });
 
 module.exports = Project;

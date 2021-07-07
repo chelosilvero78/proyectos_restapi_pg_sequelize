@@ -24,7 +24,7 @@ const Project = sequelize.define('projects', {
         timestamps: false
     });
 
-module.exports = Project;
+//module.exports = Project;
 
 /*
     hasMany=tiene muchas

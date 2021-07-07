@@ -4,7 +4,7 @@ import Task from '../models/Task';
 export async function getProjects(req, res) {
     try {
         const projects = await Project.findAll({
-            atributes: ['id', 'name', 'priority', 'description', 'deliverydate']
+            atributes: ['id', 'name', 'prority', 'description', 'deliverydate']
         });
         res.json({
             data: projects
